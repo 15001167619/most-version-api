@@ -1,0 +1,12 @@
+server:
+  port: 6080
+
+
+spring:
+  profiles:
+    active: dev
+
+---
+
+logging:
+  config: classpath:logback.xml
