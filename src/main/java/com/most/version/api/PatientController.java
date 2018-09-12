@@ -23,15 +23,27 @@ public class PatientController {
         this.baseServiceFactory = baseServiceFactory;
     }
 
+    /**
+     * @param versionNum 版本号
+     * @param parameters 参数值 json 字符串
+     * @return
+     */
     @RequestMapping(value={"getPatientInfo"}, method=RequestMethod.GET)
-    public Object getPatientInfo(String versionNum) {
+    public Object getPatientInfo(String versionNum,String parameters) {
         log.info("================>  versionNum ={}"+versionNum);
+        log.info("================>  parameters ={}"+parameters);
         return baseServiceFactory.getPatientImpl(versionNum).getPatientInfo();
     }
 
+    /**
+     * @param versionNum 版本号
+     * @param parameters 参数值 json 字符串
+     * @return
+     */
     @RequestMapping(value={"getPatientList"}, method=RequestMethod.GET)
-    public Object getPatientList(String versionNum) {
+    public Object getPatientList(String versionNum,String parameters) {
         log.info("================>  versionNum ={}"+versionNum);
+        log.info("================>  parameters ={}"+parameters);
         return baseServiceFactory.getPatientImpl(versionNum).getPatientList();
     }
 

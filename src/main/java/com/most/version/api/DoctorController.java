@@ -23,9 +23,15 @@ public class DoctorController {
         this.baseServiceFactory = baseServiceFactory;
     }
 
+    /**
+     * @param versionNum 版本号
+     * @param parameters 参数值 json 字符串
+     * @return
+     */
     @RequestMapping(value={"getDoctorInfo"}, method=RequestMethod.GET)
-    public Object getDoctorInfo(String versionNum) {
+    public Object getDoctorInfo(String versionNum,String parameters) {
         log.info("================>  versionNum ={}"+versionNum);
+        log.info("================>  parameters ={}"+parameters);
         return baseServiceFactory.getDoctorServiceImpl(versionNum).getDoctorInfo();
     }
 
